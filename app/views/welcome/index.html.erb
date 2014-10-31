@@ -1,3 +1,4 @@
+
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 <% if !@users.blank?%>
@@ -12,3 +13,29 @@
 <%= goal.title%>
 <%end%>
 <%end%>
+
+
+<h1>Welcome index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<% if !@users.blank? %>
+
+<%for user in @users %>
+<%= user.first_name %>
+
+<% end%>
+
+<% else %>
+
+<% end %>
+
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<% if !@users.blank? %>
+	<% for user in @users %>
+		First Name: <%= user.first_name %><br/>
+	<% end %>
+<% else %>
+	e
+<% end %>
