@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+  <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+	<div>
+	<%= link_to :Home %> <%= link_to :About %>
+	</div>
+</nav>
+<%= yield %>
+<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
+</body>
+</html>
