@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-<<<<<<< HEAD
-  get 'welcome/sign_up'
-=======
->>>>>>> 46aa64c97696e6494e343855a58f016b49acf28e
+  get 'welcome/sign_in'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
