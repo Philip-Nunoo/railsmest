@@ -1,10 +1,14 @@
 class WelcomeController < ApplicationController
   def index
   	@users = User.all
-  	
   end
   def signUp
    
   end
 
-end
+  
+  def sign_in
+  	
+  end
+
+end 
