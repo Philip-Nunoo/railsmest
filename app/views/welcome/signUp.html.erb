@@ -1,0 +1,30 @@
+
+<%= form_for :user do |f| %>
+<p>
+  <%= f.label :"First Name" %><br>
+  <%= f.text_field :fname %>
+</p>
+
+<p>
+  <%= f.label :"Last Name : " %><br>
+  <%= f.text_field :lname %>
+</p>
+<p>
+  <%= f.label :"UserName : " %><br>
+  <%= f.text_field :uname %>
+</p>
+
+<p>
+  <%= f.label :"Password: " %><br>
+  <%= password_field_tag(:password) %>
+</p>
+<p>
+  <%= f.label :"Confirm Password :" %><br>
+  <%= password_field_tag(:cpassword) %>
+</p>
+
+<p>
+  <%= f.submit "Submit" %>
+</p>
+
+<% end %>
