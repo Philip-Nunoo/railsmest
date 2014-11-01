@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'bucket';
+  src: url(font-path('bucket.eot?46373646'));
+  src: url(font-path('bucket.eot?46373646#iefix')) format('embedded-opentype'),
+       url(font-path('bucket.woff?46373646')) format('woff'),
+       url(font-path('bucket.ttf?46373646')) format('truetype'),
+       url(font-path('bucket.svg?46373646#bucket')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'bucket';
+    src: url(font-path('bucket.svg?46373646#bucket')) format('svg');
+  }
+}
+*/
+ 
+ %icon-base {
+  font-family: "bucket";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+%icon-facebook:before { @extend %icon-base; content: '\e800'; } /* '' */
+%icon-twitter:before { @extend %icon-base; content: '\e801'; } /* '' */
+%icon-star-half-alt:before { @extend %icon-base; content: '\e802'; } /* '' */
+%icon-star-half:before { @extend %icon-base; content: '\e803'; } /* '' */
+%icon-star-empty:before { @extend %icon-base; content: '\e804'; } /* '' */
+%icon-star:before { @extend %icon-base; content: '\e805'; } /* '' */
+%icon-bucket:before { @extend %icon-base; content: '\e806'; } /* '' */
+
+.icon-facebook { @extend %icon-facebook; }
+.icon-twitter { @extend %icon-twitter; }
+.icon-star-half-alt { @extend %icon-star-half-alt; }
+.icon-star-half { @extend %icon-star-half; }
+.icon-star-empty { @extend %icon-star-empty; }
+.icon-star { @extend %icon-star; }
+.icon-bucket { @extend %icon-bucket; }

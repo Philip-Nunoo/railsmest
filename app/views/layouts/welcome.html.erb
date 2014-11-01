@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+  <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="content">
+	<nav>
+		<div class="row">
+			<div class="left">
+				<a href="" style="padding-left: 0px; padding-right: 0px;"><i class="icon-bucket" style=""></i></a>
+				<%= link_to "Bucket List", root_path, {:class=>"title"} %>
+			</div>
+			<div class="right">
+				<div class="nav">
+					<%= link_to :Login, :login %> 
+					<%= link_to "Sign Up" %>
+					<%= link_to :About %>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<%= yield %>
+</div>
+<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
+</body>
+</html>

@@ -39,3 +39,8 @@ gem 'pry'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'devise'
+
+gem 'foundation-rails'
+
+gem 'fontello_rails_converter'

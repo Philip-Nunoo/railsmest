@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'welcome/signUp'
   get 'welcome/index'
   get 'welcome/new_goal'
   get 'welcome/sign_in'
+=======
+  get 'login' => 'welcome#sign_in', :as=> 'login'
+>>>>>>> be993c6cf86f8a7efe6220a399f2d41caef3b9c9
 
 
   # The priority is based upon order of creation: first created -> highest priority.
