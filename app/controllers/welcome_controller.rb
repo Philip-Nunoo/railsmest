@@ -1,7 +1,13 @@
 class WelcomeController < ApplicationController
   def index
-  	@users = User.all
+    @users = User.all
+    @goals = Goal.all
   end
+
+  def new_goal
+  
+  end
+
   def signUp
    
   end
@@ -11,4 +17,5 @@ class WelcomeController < ApplicationController
   	
   end
 
-end 
+end
+

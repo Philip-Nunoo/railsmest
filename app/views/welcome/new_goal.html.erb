@@ -1,0 +1,17 @@
+<h1>Create a new goal</h1>
+<%= form_for :new_goal do |g| %>
+<p>
+<strong><%= g.label :goal %></strong><br>
+<%= g.text_field :title %>
+</p>
+<br>
+<p>
+<strong><%= g.label :Description %></strong><br>
+<%= g.text_area :text %>
+</p>
+
+<p>
+<%= g.submit %>
+</p>
+  
+<% end %>
