@@ -10,11 +10,14 @@ $primary-color: #D40E00;
 $grey-color1: #FAFAFA;
 $grey-color2: #CCC;
 $white: #FFF;
+$black: #000;
 
 @import "foundation/components/global";
 @import "foundation/components/grid";
 @import "foundation/components/visibility";
 @import "foundation/components/block-grid";
+@import "bucket";
+
 @import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);
 
 $font1 : 'Open Sans Condensed', sans-serif;
@@ -28,28 +31,62 @@ a{
 	text-decoration: none;
 	color: $primary-color;
 }
+
 .content{
-	background-color: $white;
 	height: 100%;
-	border-left: 1px solid $grey-color2;
-	border-right: 1px solid #EEE;
-	box-shadow: 0px 0px 6px $grey-color2;
 }
 nav {
-	background-color: #000;
-	color: #FFF;
+	/*background-color: $primary-color;*/
+	color: $primary-color;
+
+	i{
+		font-size: 40px;
+	}
 
 	a{
 		font-size: 120%;
-		color: $white;
+		color: $primary-color;
 		padding: 14px 23px;
 		display: inline-block;
+		margin-left: 20px;
+		margin-top: 20px;
+
+
+	}
+
+	.nav{
+		a{
+			background-color: #EEE;
+			border-radius: 40px;
+
+			&:hover{
+				background-color: $primary-color;
+				font-weight: 300;
+				color: #EEE;
+			}
+		}
 	}
 }
 .title{
 	font-family: $font2;
 	font-size: 33px;
+	padding: 0px;
 }
+
 section {
-	
+	&#head{
+		padding: 10% 0px;
+		text-align: center;
+
+		h1{
+			&.title{
+				font-size: 90px;
+				margin-bottom: 0px;
+			}
+
+			&.sub-title{
+				color: $grey-color2;
+			}
+		}
+	}
 }

@@ -10,20 +10,19 @@
 	<nav>
 		<div class="row">
 			<div class="left">
+				<a href="" style="padding-left: 0px; padding-right: 0px;"><i class="icon-bucket" style=""></i></a>
 				<%= link_to "Bucket List", root_path, {:class=>"title"} %>
 			</div>
 			<div class="right">
-			<%= link_to :Login, :login %> <%= link_to :About %>
+				<div class="nav">
+					<%= link_to :Login, :login %> 
+					<%= link_to "Sign Up" %>
+					<%= link_to :About %>
+				</div>
 			</div>
 		</div>
 	</nav>
-	<section id="body">
-		<div class="">
-			<div>
-				<%= yield %>
-			</div>
-		</div>
-	</section>
+	<%= yield %>
 </div>
 <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 </body>

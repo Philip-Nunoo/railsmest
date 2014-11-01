@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'foundation-rails'
+
+gem 'fontello_rails_converter'
