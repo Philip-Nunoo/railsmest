@@ -6,8 +6,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 <div class="content">
 	<nav>
@@ -19,12 +17,15 @@
 			<div class="right">
 				<div class="nav">
 					<%= link_to :Login, :login %> 
-					<%= link_to "Sign Up" %>
+					<%= link_to "Sign Up", :register %>
 					<%= link_to :About %>
 				</div>
 			</div>
 		</div>
 	</nav>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 	<%= yield %>
 </div>
 <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
