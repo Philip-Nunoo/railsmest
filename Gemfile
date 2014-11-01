@@ -44,3 +44,5 @@ gem 'devise'
 gem 'foundation-rails'
 
 gem 'fontello_rails_converter'
+
+gem 'devise'
