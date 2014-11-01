@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :passes
   root "welcome#index"
 
   get 'login' => 'welcome#sign_in', :as=> 'login'
