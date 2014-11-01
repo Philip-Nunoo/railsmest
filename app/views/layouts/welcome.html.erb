@@ -6,12 +6,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-	<div>
-	<%= link_to :Home, root_path %> <%= link_to :Login, :login %> <%= link_to :About %>
-	</div>
-</nav>
-<%= yield %>
+<div class="content">
+	<nav>
+		<div class="row">
+			<div class="left">
+				<%= link_to "Bucket List", root_path, {:class=>"title"} %>
+			</div>
+			<div class="right">
+			<%= link_to :Login, :login %> <%= link_to :About %>
+			</div>
+		</div>
+	</nav>
+	<section id="body">
+		<div class="">
+			<div>
+				<%= yield %>
+			</div>
+		</div>
+	</section>
+</div>
 <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 </body>
 </html>

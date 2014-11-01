@@ -5,3 +5,51 @@
 
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #D40E00;
+$grey-color1: #FAFAFA;
+$grey-color2: #CCC;
+$white: #FFF;
+
+@import "foundation/components/global";
+@import "foundation/components/grid";
+@import "foundation/components/visibility";
+@import "foundation/components/block-grid";
+@import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);
+
+$font1 : 'Open Sans Condensed', sans-serif;
+$font2 : 'Miniver', cursive;
+body{
+	font-family: $font1;
+	background-color: $grey-color1;
+}
+
+a{
+	text-decoration: none;
+	color: $primary-color;
+}
+.content{
+	background-color: $white;
+	height: 100%;
+	border-left: 1px solid $grey-color2;
+	border-right: 1px solid #EEE;
+	box-shadow: 0px 0px 6px $grey-color2;
+}
+nav {
+	background-color: #000;
+	color: #FFF;
+
+	a{
+		font-size: 120%;
+		color: $white;
+		padding: 14px 23px;
+		display: inline-block;
+	}
+}
+.title{
+	font-family: $font2;
+	font-size: 33px;
+}
+section {
+	
+}
