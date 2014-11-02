@@ -12,7 +12,12 @@
   </head>
 
   <body>
-
+    <% if pass_signed_in? %>
+      Welcome <%= current_pass.user.fullname %>
+      <%= link_to :logout, :logout %>
+    <% else %>
+      Nooooooo
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
