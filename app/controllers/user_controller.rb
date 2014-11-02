@@ -1,4 +1,29 @@
 class UserController < ApplicationController
+	def logout
+		sign_out :pass
+		redirect_to :root
+	end
+
+	def user_sign_in
+		params = user_params
+		user = User.find_by :email => params[:email]
+		if user
+			pass = Pass.find_by :user => user
+
+			if pass.valid_password?(params[:password])
+				sign_in :pass, pass
+				redirect_to :userpage_index and return
+			else
+				flash[:notice] = "Invalid password"				
+			end
+		else
+			flash[:notice] = "Invalid email or password"	
+		end
+
+		redirect_to :login and return
+
+	end
+
 	def create
 		params = user_params
 

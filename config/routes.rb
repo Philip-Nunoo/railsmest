@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'login' => 'welcome#sign_in', :as=> 'login'
   get 'register' => 'welcome#signUp', :as=> 'register'
   get '/user/newgoal' => 'welcome#new_goal', :as=> 'newgoal'
+  get '/logout' => 'user#logout', :as => 'logout'
   post '/user/create' => 'user#create'
-  
+  post '/user/user_sign_in' => 'user#user_sign_in', :as => 'sign_in'
+  get 'userpage/index' => 'userpage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
