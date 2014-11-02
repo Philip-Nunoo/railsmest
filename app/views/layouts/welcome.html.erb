@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project</title>
-  <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Project</title>
+	<%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
+	<%=javascript_include_tag "vendor/modernizr" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="content">
+	<% if notice or alert %>
+	<div class="">
+		<% if notice %>
+		<div data-alert class="alert-box success">
+			<%= notice %>
+			<a href="#" class="close">&times;</a>
+		</div>
+		<% end %>
+		<% if alert %>
+		<div data-alert class="alert-box alert">
+			<%= alert %>
+			<a href="#" class="close">&times;</a>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
 	<nav>
 		<div class="row">
 			<div class="left">
@@ -23,11 +39,14 @@
 			</div>
 		</div>
 	</nav>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 	<%= yield %>
-</div>
-<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
+	<footer>
+		<div style="margin-bottom: 12px;">
+			<i class="icon-facebook"></i>
+			<i class="icon-twitter"></i>
+		</div>
+		<div>&copy; 2014</div>
+	</footer>
+	<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 </body>
 </html>

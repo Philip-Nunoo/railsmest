@@ -8,6 +8,7 @@
 
 $primary-color: #D40E00;
 $grey-color1: #FAFAFA;
+$grey-color3: #F3F3F3;
 $grey-color2: #CCC;
 $white: #FFF;
 $black: #000;
@@ -16,6 +17,7 @@ $black: #000;
 @import "foundation/components/grid";
 @import "foundation/components/visibility";
 @import "foundation/components/block-grid";
+@import "foundation/components/alert-boxes";
 @import "bucket";
 
 @import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);
@@ -46,7 +48,7 @@ nav {
 	a{
 		font-size: 120%;
 		color: $primary-color;
-		padding: 14px 23px;
+		padding: 5px 23px;
 		display: inline-block;
 		margin-left: 20px;
 		margin-top: 20px;
@@ -74,19 +76,136 @@ nav {
 }
 
 section {
+	padding: 40px 0px;
+	.heading{
+		font-weight: lighter;
+		font-size: 45px;
+		margin: 0px;
+	}
 	&#head{
-		padding: 10% 0px;
+		padding: 8% 0px;
 		text-align: center;
 
 		h1{
 			&.title{
 				font-size: 90px;
-				margin-bottom: 0px;
+				margin-bottom: -40px;
 			}
 
 			&.sub-title{
-				color: $grey-color2;
+				color: $white;
+				text-shadow: -1px -1px 1px #000;
+				letter-spacing: 0.12em;
+				margin-top: 0px;
+				font-family: $font1;
+				font-weight: lighter;
+				font-style: italic;
 			}
 		}
+	}
+
+	&#latest-ideas{
+		background-color: $primary-color;
+	/*background-image: url("http://www.transparenttextures.com/patterns/gravel.png");*/
+	background-image: url("http://www.transparenttextures.com/patterns/gravel.png");
+
+		.latest-ideas{
+			.idea{
+				background-color: $grey-color3;
+				padding: 10px;
+				border: solid 1px #c0c0c0;
+				border-radius: 4px;
+
+				span {
+					&.user{
+						display: block;
+						font-weight: bold;
+						color: $primary-color;
+					}
+				}
+
+				p{
+					&:before{
+						content: '"';
+					}
+
+					&:after{
+						content: '"';
+					}
+				}
+			}
+		}
+	}
+}
+
+.form{
+	background-color: $grey-color3;
+	padding: 12px;
+	width: 45%;
+	border: solid 1px #F0F0F0;
+	border-radius: 4px;
+	box-shadow: 0px 0px 3px;
+
+	label{
+		font-size: 19px;
+	}
+
+	.form-inputs{
+		padding: 10px 12px;
+		border-radius: 3px;
+		border: solid 1px #C0C0C0;
+		color: #888;
+		width: 100%;
+	}
+
+	input[type="text"]{
+		@extend .form-inputs;
+	}
+
+	input[type="password"]{
+		@extend .form-inputs;
+	}
+
+	input[type="email"]{
+		@extend .form-inputs;
+	}
+
+	input[type="submit"]{
+		padding: 12px 36px;
+		color: #EEE;
+		background-color: #5CA413;
+		border-radius: 5px;
+		border: solid 1px #FFF;
+		font-size: 15px;
+		box-shadow: 0px 0px 4px #555;
+
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	&.register{
+		margin: auto;
+	}
+}
+
+.alert-box{
+
+}
+
+footer{
+	background-color: $black;
+	color: white;
+	text-align: center;
+	padding: 16px;
+
+	i{
+		font-size: 23px;
+		display: inline-block;
+		margin: 0px 12px;
+		color: #000;
+		background-color: #FFF;
+		border-radius: 50%;
 	}
 }
