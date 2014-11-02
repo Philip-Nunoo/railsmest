@@ -1,0 +1,8 @@
+<h1>Goal#index</h1>
+<% if !@goals.blank? %>
+  <% for goal in @goals %>
+    <%= goal.title %>
+  <% end %>
+<% else %>
+  No goal created yet <%= link_to "create goal", :goal_new %> to get started.
+<% end %>

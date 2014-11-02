@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'goal/index'
+
+  post 'goal/create'
+
+  get 'goal/new'
+
   devise_for :passes
   root "welcome#index"
 
