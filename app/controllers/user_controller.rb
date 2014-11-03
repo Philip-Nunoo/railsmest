@@ -21,7 +21,6 @@ class UserController < ApplicationController
 		end
 
 		redirect_to :login and return
-
 	end
 
 	def create
@@ -34,14 +33,16 @@ class UserController < ApplicationController
 		user.email = params[:email]
 		
 
-		if user.save
+		if user.valid?
 			pass = Pass.new 
 			pass.user = user
 			pass.email = user.email
 			pass.password = params[:password]
 			pass.password_confirmation = params[:password_confirmation]			
 
-			if pass.save				
+			if pass.valid?
+				user.save
+				pass.save				
 				flash[:notice] = "Registration Complete, Please Sign In to continue..."
 				redirect_to :controller => :welcome, :action => :index and return
 			else
