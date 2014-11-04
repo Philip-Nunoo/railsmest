@@ -1,7 +1,8 @@
 class GoalController < ApplicationController
   before_action :authenticate_pass!
+  layout "userpage"
   def index
-    @goals = Goal.all
+    @goals = Goal.where :user=> current_pass.user
   end
 
   def create

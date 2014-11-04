@@ -1,4 +1,23 @@
-<h1>Userpage#index</h1>
-<p>Find me in app/views/userpage/index.html.erb</p>
-<%= link_to :new_goal, :goal_new  %>
+<section>
+	<div class="user_profile">
+		<div>
+			<img src="">
+			<div class="name"><%= current_pass.user.fullname %></div>
+			<div class="status">
+				<ul>
+					<li><h2>205</h2><h3>Goals</h3></li>
+				</ul>
+			</div>
 
+		</div>
+	</div>
+</section>
+<section>
+	<% if !@goals.blank? %>
+	<% for goal in @goals %>
+	<%= goal.title %>
+	<% end %>
+	<% else %>
+	No goal created yet <%= link_to "create goal", :goal_new %> to get started.
+	<% end %>
+</section>

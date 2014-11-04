@@ -8,14 +8,5 @@ class WelcomeController < ApplicationController
   
   end
 
-  def signUp
-  	@user = User.new
-  end
-
-  
-  def sign_in
-  	
-  end
-
 end
 

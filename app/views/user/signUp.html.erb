@@ -1,9 +1,9 @@
 <section class="row">
   <div class="form register">
-    <%= form_for :user,:url => { :controller => :user, :action => :create } do |f| %>
+    <%= simple_form_for @user,:url => { :controller => :user, :action => :create } do |f| %>
     <p>
       <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, value: @user.first_name %>
     </p>
 
     <p>
@@ -20,15 +20,15 @@
     </p>
     <p>
       <%= f.label :password %><br>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, required: true %>
     </p>
     <p>
       <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, required: true %>
     </p>
 
     <p>
-    <%= f.submit :Register, {:class=>"button expand", :id=>"ids"}, disable_with: "loging in..." %>
+      <%= f.submit :Register, {:class=>"button expand", :id=>"ids", data: { disable_with: "Please wait..."}} %>
     </p>
 
     <% end %>

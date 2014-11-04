@@ -1,3 +1,46 @@
 // Place all the styles related to the userpage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grey-color1: #FAFAFA;
+@import "foundation/components/global";
+@import "foundation/components/grid";
+@import "foundation/components/visibility";
+@import "foundation/components/block-grid";
+@import "foundation/components/alert-boxes";
+@import "bucket";
+
+@import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);
+
+$font1 : 'Open Sans Condensed', sans-serif;
+$font2 : 'Miniver', cursive;
+
+body{
+	font-family: $font1;
+	background-color: $grey-color1;
+}
+
+.user_profile{
+	background-color: #fff;
+	width: 17%;
+	border: solid 1px #DDD;
+	margin: 12px;
+	box-shadow: 0px 0px 1px #CCC;
+	padding: 10px;
+
+	img{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 1px solid;
+		display: block;
+		margin: 20px auto;
+	}
+
+	.name{
+		font-size: 24px;
+		text-align: center;
+		font-weight: bold;
+	}
+
+}

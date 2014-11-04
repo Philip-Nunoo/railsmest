@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "bucket" %></title>
+
+  <%= stylesheet_link_tag    "userpage" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <nav>
+    <%= link_to :Home, :userpage_index %>
+    <%= link_to "New goal", :goal_new  %>
+
+    <% if pass_signed_in? %>
+    Welcome <%= current_pass.user.fullname %>
+    <%= link_to "User Profile" %>
+    <%= link_to :logout, :logout %>
+    <% else %>
+    Nooooooo
+    <% end %>
+    <%= yield %>
+    <%= javascript_include_tag "userpage" %>
+  </nav>
+</body>
+</html>
