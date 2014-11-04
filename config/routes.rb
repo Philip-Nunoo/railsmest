@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :passes
   root "welcome#index"
 
-  get 'login'               => 'user#sign_in',      :as=> 'login'
+  get 'login'               => 'user#signIn',      :as=> 'login'
   get 'register'            => 'user#signUp',       :as=> 'register'
   get '/user/newgoal'       => 'welcome#new_goal',  :as=> 'newgoal'
   get '/logout'             => 'user#logout',       :as=> 'logout'

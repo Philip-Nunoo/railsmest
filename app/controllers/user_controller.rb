@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 	layout 'welcome'
+	
 	def logout
 		sign_out :pass
 		redirect_to :root
@@ -22,7 +23,7 @@ class UserController < ApplicationController
 			flash[:notice] = "Invalid email or password"	
 		end
 
-		render 'sign_in'
+		render 'signIn'
 	end
 
 	def signUp
@@ -31,20 +32,19 @@ class UserController < ApplicationController
 		end
 	end
 
-	def sign_in
+	def signIn
 		if !@user
 			@user = User.new
 		end		
 	end
+
 	def create
 		params = user_params
 
 		@user = User.new 	:username=>params[:username], 
 							:first_name=>params[:first_name], 
 							:last_name=>params[:last_name], 
-							:email=>params[:email]
-
-		
+							:email=>params[:email]	
 
 		if @user.valid?
 			pass = Pass.new 
