@@ -1,6 +1,6 @@
 class UserController < ApplicationController
 	layout 'welcome'
-	
+
 	def logout
 		sign_out :pass
 		redirect_to :root
@@ -20,8 +20,10 @@ class UserController < ApplicationController
 				flash[:notice] = "Invalid password"				
 			end
 		else
-			flash[:notice] = "Invalid email or password"	
+			flash[:notice] = "Invalid email or password"
+
 		end
+		@user = User.new :email => params[:email]
 
 		render 'signIn'
 	end
@@ -65,9 +67,7 @@ class UserController < ApplicationController
 		else
 			flash[:alert] = "Error occured #{@user.errors.messages}"
 		end
-
 		render 'signUp'
-
 	end
 
 	private

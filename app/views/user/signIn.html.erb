@@ -1,6 +1,6 @@
 <section class="row" style="padding: 110px 0px;">
 	<div class="form register">
-		<%= simple_form_for @user,:url => { :controller => :user, :action => :user_sign_in } do |f| %>
+		<%= simple_form_for @user, :url => { :controller => :user, :action => :user_sign_in } do |f| %>
 		<p>
 			<%= f.label :email %><br>
 			<%= f.text_field :email  %>
