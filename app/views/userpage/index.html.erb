@@ -19,10 +19,11 @@
 </section>
 <section>
 	<% if !@goals.blank? %>
-	<table border="0">
-		<tr><th>Goal Name</th><th>Actions</th></tr>
+	<table border="0" class="goals">
+		<tr><td></td><th>Goal Name</th><th>Actions</th></tr>
 		<% for goal in @goals %>
 		<tr>
+			<td><input type="checkbox"></td>
 			<td><%= goal.title %></td>
 			<td><%= link_to "details" %> <%= link_to "edit" %> <%= link_to "delete" %></td>
 		</tr>

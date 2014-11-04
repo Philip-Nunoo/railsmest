@@ -24,15 +24,17 @@ body{
 	background-color: #F1F1F1;
 	box-shadow: 0px 1px 3px;
 	padding: 19px;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
 }
 
 #left-nav{
-	background-color: #F1F1F1;
-box-shadow: 0px 1px 3px;
-padding: 19px;
-position: fixed;
-width: 100%;
-z-index: 99;
+	background-color: #FFF;
+	width: 18%;
+	position: fixed;
+	padding-top: 60px;
+	height: 100%;
 
 	a{
 		text-decoration: none;
@@ -49,10 +51,18 @@ z-index: 99;
 
 }
 
+
+table.goals{
+	width: 100%;
+	tr{}
+}
+
 #right-content{
-	float: left;
-	width: auto;
-padding: 0px 24px;
+	width: 80%;
+	padding: 0px 24px;
+	float: right;
+	margin-top: 20px;
+
 	&:after{
 		float: none;
 	}
