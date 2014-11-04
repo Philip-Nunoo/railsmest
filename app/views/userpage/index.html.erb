@@ -1,12 +1,17 @@
 <section>
-	<div class="user_profile">
+	<div class="">
 		<div>
 			<img src="">
-			<div class="name"><%= current_pass.user.fullname %></div>
-			<div class="status">
-				<ul>
-					<li><h2>205</h2><h3>Goals</h3></li>
-				</ul>
+			<div class=""><h1><%= current_pass.user.fullname %></h1></div>
+			<div class="">
+				<div>
+					<% if !@goals.blank? %>
+					You have <%= pluralize @goals.size, "goal"%>
+					<% else %>
+					No goal created yet <%= link_to "create goal", :goal_new %> to get started.
+					<% end %>
+
+				</div>
 			</div>
 
 		</div>
@@ -14,9 +19,15 @@
 </section>
 <section>
 	<% if !@goals.blank? %>
-	<% for goal in @goals %>
-	<%= goal.title %>
-	<% end %>
+	<table border="0">
+		<tr><th>Goal Name</th><th>Actions</th></tr>
+		<% for goal in @goals %>
+		<tr>
+			<td><%= goal.title %></td>
+			<td><%= link_to "details" %> <%= link_to "edit" %> <%= link_to "delete" %></td>
+		</tr>
+		<% end %>
+	</table>
 	<% else %>
 	No goal created yet <%= link_to "create goal", :goal_new %> to get started.
 	<% end %>

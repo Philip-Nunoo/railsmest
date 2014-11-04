@@ -12,19 +12,26 @@
 </head>
 
 <body>
-  <nav>
+  <nav id="top-nav">
     <%= link_to :Home, :userpage_index %>
-    <%= link_to "New goal", :goal_new  %>
 
     <% if pass_signed_in? %>
     Welcome <%= current_pass.user.fullname %>
     <%= link_to "User Profile" %>
     <%= link_to :logout, :logout %>
-    <% else %>
-    Nooooooo
     <% end %>
-    <%= yield %>
-    <%= javascript_include_tag "userpage" %>
   </nav>
+  <div id="left-nav">
+    <div>
+      <%= link_to "New goal", :goal_new  %>
+      <%= link_to "All goals"%>
+      <%= link_to "Favourited"%>
+      <%= link_to "Done"%>
+    </div>
+  </div>
+  <div id="right-content">
+  <%= yield %>
+  </div>
+  <%= javascript_include_tag "userpage" %>
 </body>
 </html>

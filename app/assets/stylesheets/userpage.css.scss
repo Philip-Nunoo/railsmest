@@ -20,27 +20,40 @@ body{
 	background-color: $grey-color1;
 }
 
-.user_profile{
-	background-color: #fff;
-	width: 17%;
-	border: solid 1px #DDD;
-	margin: 12px;
-	box-shadow: 0px 0px 1px #CCC;
-	padding: 10px;
+#top-nav{
+	background-color: #F1F1F1;
+	box-shadow: 0px 1px 3px;
+	padding: 19px;
+}
 
-	img{
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		border: 1px solid;
+#left-nav{
+	background-color: #F1F1F1;
+box-shadow: 0px 1px 3px;
+padding: 19px;
+position: fixed;
+width: 100%;
+z-index: 99;
+
+	a{
+		text-decoration: none;
 		display: block;
-		margin: 20px auto;
-	}
-
-	.name{
-		font-size: 24px;
 		text-align: center;
-		font-weight: bold;
+		padding: 10px 0px;
+		border-bottom: 1px #19B5FE solid;
+		color: #000;
+		&:hover{
+			background-color: #19B5FE;
+			color: #FFF;
+		}
 	}
 
+}
+
+#right-content{
+	float: left;
+	width: auto;
+padding: 0px 24px;
+	&:after{
+		float: none;
+	}
 }

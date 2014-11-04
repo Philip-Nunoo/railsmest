@@ -48,6 +48,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     fontello_rails_converter (0.3.2)
       launchy
       rest-client
@@ -148,6 +150,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  faker
   fontello_rails_converter
   foundation-rails
   jbuilder (~> 2.0)

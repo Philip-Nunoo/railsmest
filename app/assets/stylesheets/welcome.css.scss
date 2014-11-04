@@ -37,9 +37,12 @@ a{
 .content{
 	height: 100%;
 }
+
 nav {
-	/*background-color: $primary-color;*/
+	background-color: transparent;
 	color: $primary-color;
+	position: absolute;
+	width: 100%;
 
 	i{
 		font-size: 40px;
@@ -82,13 +85,17 @@ section {
 		font-size: 45px;
 		margin: 0px;
 	}
+
 	&#head{
-		padding: 8% 0px;
+		padding: 18% 0px;
 		text-align: center;
+		background-image: url("/assets/userhome.jpg");
+		background-size: cover;
 
 		h1{
 			&.title{
 				font-size: 90px;
+				margin: 0px;
 				margin-bottom: -40px;
 			}
 
@@ -106,8 +113,8 @@ section {
 
 	&#latest-ideas{
 		background-color: $primary-color;
-	/*background-image: url("http://www.transparenttextures.com/patterns/gravel.png");*/
-	background-image: url("http://www.transparenttextures.com/patterns/gravel.png");
+		/*background-image: url("http://www.transparenttextures.com/patterns/gravel.png");*/
+		background-image: url("http://www.transparenttextures.com/patterns/gravel.png");
 
 		.latest-ideas{
 			.idea{
