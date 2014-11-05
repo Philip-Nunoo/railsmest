@@ -1,7 +1,7 @@
 <h1>Create a new goal</h1>
-<%= form_for :goal, :url => { :controller => :goal, :action => :create } do |g| %>
+<%= simple_form_for @goal, :url => { :controller => :goal, :action => :create } do |g| %>
 <p>
-  <strong><%= g.label :goal %></strong><br>
+  <strong><%= g.label :title %></strong><br>
   <%= g.text_field :title %>
 </p>
 <br>

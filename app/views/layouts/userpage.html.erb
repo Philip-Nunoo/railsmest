@@ -12,34 +12,26 @@
 </head>
 
 <body>
-  <nav class="top-bar" >
-    <%= link_to "Bucket List", :userpage_index, {:class => "title"} %>
-
+  <nav class="top-bar top-nav" >
+  <span class="titles">
+      <a href="" style="padding: 0px;"><i class="icon-bucket" style=""></i></a>
+      <%= link_to "Bucket List", :userpage_index, {:class => "title"} %>
+    </span>
     <div class="right user" data-topbar>
       <% if pass_signed_in? %>
-      <a href="#" data-dropdown="drop1">Has Dropdown</a>
-<ul id="drop1" class="f-dropdown" data-dropdown-content>
-  <li><a href="#">This is a link</a></li>
-  <li><a href="#">This is another</a></li>
-  <li><a href="#">Yet another</a></li>
-</ul>
-<a href="#" data-dropdown="drop2">Has Content Dropdown</a>
-<div id="drop2" data-dropdown-content class="f-dropdown content">
-  <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
-</div>
-      <!-- <section class="top-bar-section spa">
+      <section class="top-bar-section spa">
         <ul>
 
           <li><img src="<%= Faker::Avatar.image("man", "40x40", "png")%>"></li>
           <li class="has-dropdown">
-            <a href="#"><%= current_pass.user.fullname %></a>
+            <a href="#" style="color: #000; text-decoration: none;"><%= current_pass.user.fullname %></a>
             <ul class="dropdown">
               <li><%= link_to "User Profile" %></li>
               <li class=""><%= link_to :logout, :logout %></li>
             </ul>
           </li>
         </ul>
-      </section> -->
+      </section>
       
       
       <% end %>

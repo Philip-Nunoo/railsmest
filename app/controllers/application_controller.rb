@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   protected
+
   def authenticate_pass!
   	if pass_signed_in?
   		super

@@ -4,6 +4,18 @@
 			<img src="">
 			<div class=""><h1><%= current_pass.user.fullname %></h1></div>
 			<div class="">
+				<h2 style="text-decoration: none; color: #000; margin: 0px;">
+					<%= current_pass.email %>
+				</h2>
+			</div>
+			<div class="">
+				<b>Last Signed In on: </b>
+				<h4 style="text-decoration: none; color: #000; margin: 0px; font-weight: 100; display: inline-block;">
+					<%= current_pass.last_sign_in_at.strftime("%B %d, %Y")
+					%>
+				</h4>
+			</div>
+			<div class="">
 				<div>
 					<% if !@goals.blank? %>
 					You have <%= pluralize @goals.size, "goal"%>
@@ -18,23 +30,6 @@
 	</div>
 </section>
 <section>
-	<% if !@goals.blank? %>
-	<table border="0" class="goals">
-		<tr><td></td><th>Goal Name</th><th>Actions</th></tr>
-		<% for goal in @goals %>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td><%= goal.title %></td>
-			<td class="action">
-			<%= link_to "details",show_goal_path(goal)  %> 
-			<%= link_to "edit" %> 
-			<%= link_to "delete", delete_goal_path(goal)%></td>
-		</tr>
-		<% end %>
-
-	</table>
-	<% else %>
-	No goal created yet <%= link_to "create goal", :goal_new %> to get started.
-	<% end %>
+	<%= render :partial => 'goal/show'%>
 </section> 
 
