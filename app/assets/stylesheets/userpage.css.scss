@@ -3,11 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $grey-color1: #FAFAFA;
+
+// Background color for the top bar
+/*$topbar-bg-color: transparent !default;*/
+$topbar-bg: transparent !default;
+
+// Style the top bar dropdown elements
+$topbar-dropdown-bg: transparent !default;
+$topbar-dropdown-link-color: #000 !default;
+$topbar-dropdown-link-bg: #FFF !default;
+
 @import "foundation/components/global";
 @import "foundation/components/grid";
 @import "foundation/components/visibility";
 @import "foundation/components/block-grid";
+@import "foundation/components/dropdown";
 @import "foundation/components/alert-boxes";
+@import "foundation/components/top-bar";
+
 @import "bucket";
 
 @import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);
@@ -20,13 +33,33 @@ body{
 	background-color: $grey-color1;
 }
 
-#top-nav{
+.title{
+	font-family: $font2;
+	font-size: 28px;
+	padding: 0px;
+}
+
+.top-nav{
 	background-color: #F1F1F1;
 	box-shadow: 0px 1px 3px;
-	padding: 19px;
 	position: fixed;
 	width: 100%;
 	z-index: 99;
+	padding: 10px;
+	display: table;
+
+	.user{
+
+		img{
+			border-radius: 50%;
+			background-color: #FFF;
+			box-shadow: 0px 0px 1px;
+		}
+
+		&:after{
+			clear: both;
+		}
+	}
 }
 
 #left-nav{
@@ -35,6 +68,7 @@ body{
 	position: fixed;
 	padding-top: 60px;
 	height: 100%;
+	border-right: 1px solid #CCC;
 
 	a{
 		text-decoration: none;
@@ -54,7 +88,26 @@ body{
 
 table.goals{
 	width: 100%;
-	tr{}
+	tr{
+		border-bottom: 1px solid #CA1;
+		display: table;
+		width: 100%;
+
+		td{
+			padding: 8px;
+
+			&.action{
+				float: right;
+
+				a{
+					text-decoration: none;
+					text-transform: capitalize;
+					padding: 0px 12px;
+				}
+			}
+
+		}
+	}
 }
 
 #right-content{
@@ -65,5 +118,11 @@ table.goals{
 
 	&:after{
 		float: none;
+	}
+}
+
+.spa{
+	a{
+	background-color: transparent;
 	}
 }
