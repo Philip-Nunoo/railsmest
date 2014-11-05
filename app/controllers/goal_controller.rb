@@ -18,8 +18,15 @@ class GoalController < ApplicationController
 
   def new
   end
-
-
+  
+  def show
+    @goal = Goal.find(params[:id])
+  end
+ def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to :userpage_index and return
+  end
   private
 
   def goal_params

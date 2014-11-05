@@ -25,11 +25,16 @@
 		<tr>
 			<td><input type="checkbox"></td>
 			<td><%= goal.title %></td>
-			<td class="action"><%= link_to "details" %> <%= link_to "edit" %> <%= link_to "delete" %></td>
+			<td class="action">
+			<%= link_to "details",show_goal_path(goal)  %> 
+			<%= link_to "edit" %> 
+			<%= link_to "delete", delete_goal_path(goal)%></td>
 		</tr>
 		<% end %>
+
 	</table>
 	<% else %>
 	No goal created yet <%= link_to "create goal", :goal_new %> to get started.
 	<% end %>
-</section>
+</section> 
+
