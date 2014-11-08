@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "welcome#index"
+  devise_for :passes
 
   get 'goal/index'
 
@@ -6,10 +8,10 @@ Rails.application.routes.draw do
 
   get 'goal/new'
   get 'goal/:id/show'       => 'goal#show',        :as=> 'show_goal'
+  get 'goal/:id/destroy'    => 'goal#destroy',  :as=> 'destroy_goal'
+  get 'goal/:id/edit'    => 'goal#edit',  :as=> 'edit_goal'
   
 
-  devise_for :passes
-  root "welcome#index"
 
   get 'login'               => 'user#signIn',      :as=> 'login'
   get 'register'            => 'user#signUp',       :as=> 'register'

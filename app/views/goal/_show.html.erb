@@ -1,0 +1,19 @@
+<% if !@goals.blank? %>
+<table border="0" class="goals">
+	<tr><td></td><th>Goal Name</th><th>Actions</th></tr>
+	<% for goal in @goals %>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td><%= goal.title %></td>
+		<td class="action">
+			<%= link_to "details", show_goal_path(goal)  %> 
+			<%= link_to "edit" , edit_goal_path(goal) %> 
+			<%= link_to "delete", destroy_goal_path(goal), :onclick => "return confirm('Are you sure you want to delete this post?')" %>
+		</td>
+	</tr>
+	<% end %>
+
+</table>
+<% else %>
+No goal created yet <%= link_to "create goal", :goal_new %> to get started.
+<% end %>

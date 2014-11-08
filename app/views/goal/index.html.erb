@@ -1,4 +1,6 @@
-<h1>Goal#index</h1>
+<h1>All created Goals</h1>
+
+	<%=render 'show'%>
 <% if !@goals.blank? %>
   <% for goal in @goals %>
     <%= goal.title %>
