@@ -12,12 +12,12 @@ $grey-color3: #F3F3F3;
 $grey-color2: #CCC;
 $white: #FFF;
 $black: #000;
-
 @import "foundation/components/global";
 @import "foundation/components/grid";
 @import "foundation/components/visibility";
 @import "foundation/components/block-grid";
 @import "foundation/components/alert-boxes";
+@import 'gritter';
 @import "bucket";
 
 @import url(http://fonts.googleapis.com/css?family=Miniver|Open+Sans+Condensed:300,300italic,700);

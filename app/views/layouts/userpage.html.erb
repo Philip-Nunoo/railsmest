@@ -15,7 +15,7 @@
   <nav class="top-bar top-nav" >
   <span class="titles">
       <a href="" style="padding: 0px;"><i class="icon-bucket" style=""></i></a>
-      <%= link_to "Bucket List", :userpage_index, {:class => "title"} %>
+      <%= link_to "Bucket List", :root, {:class => "title"} %>
     </span>
     <div class="right user" data-topbar>
       <% if pass_signed_in? %>
@@ -39,6 +39,7 @@
   </nav>
   <div id="left-nav">
     <div>
+      <%= link_to "Dashboard", :user_path %>
       <%= link_to "New goal", :goal_new  %>
       <%= link_to "All goals", :goal_index%>
       <%= link_to "Favourited"%>

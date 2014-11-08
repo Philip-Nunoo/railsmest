@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   protected
+  
+  def check_pass!
+    if pass_signed_in?
+      redirect_to :user_path and return
+    else
+      return true
+    end
+  end
 
   def authenticate_pass!
   	if pass_signed_in?

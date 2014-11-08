@@ -7,21 +7,21 @@ Rails.application.routes.draw do
   post 'goal/create'
 
   get 'goal/new'
-  get 'goal/:id/show'       => 'goal#show',        :as=> 'show_goal'
-  get 'goal/:id/destroy'    => 'goal#destroy',  :as=> 'destroy_goal'
-  get 'goal/:id/edit'    => 'goal#edit',  :as=> 'edit_goal'
+  get 'goal/:id/show'       => 'goal#show',         :as=> 'show_goal'
+  get 'goal/:id/destroy'    => 'goal#destroy',      :as=> 'destroy_goal'
+  get 'goal/:id/edit'       => 'goal#edit',         :as=> 'edit_goal'
   
 
 
-  get 'login'               => 'user#signIn',      :as=> 'login'
-  get 'register'            => 'user#signUp',       :as=> 'register'
   get '/user/newgoal'       => 'welcome#new_goal',  :as=> 'newgoal'
 
-  get '/logout'             => 'user#logout',       :as=> 'logout'
-  post '/user/create'       => 'user#create'
-  post '/user/user_sign_in' => 'user#user_sign_in', :as=> 'sign_in'
+  get  'logout'              => 'user#logout',       :as=> 'logout'
+  get  'login'               => 'user#login',       :as=> 'login'
+  get  'register'            => 'user#sign_up',      :as=> 'register'
+  post 'user/create'         => 'user#create'
+  post 'user/user_sign_in'   => 'user#user_sign_in', :as=> 'sign_in'
 
-  get 'userpage/index'      => 'userpage#index'
+  get 'user/index'      => 'userpage#index',      :as=> 'user_path'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

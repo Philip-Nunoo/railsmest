@@ -1,6 +1,7 @@
 class GoalController < ApplicationController
   before_action :authenticate_pass!
   layout "userpage"
+  
   def index
     @goals = Goal.where :user=> current_pass.user
   end
@@ -17,6 +18,7 @@ class GoalController < ApplicationController
   end
 
   def new
+    @goal = Goal.new
   end
   
   def edit

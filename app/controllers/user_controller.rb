@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 	layout 'welcome'
+	before_action :check_pass!, :except=>:logout
 
 	def logout
 		sign_out :pass
@@ -11,63 +12,44 @@ class UserController < ApplicationController
 		@user = User.find_by :email => params[:email]
 		
 		if @user
-			pass = Pass.find_by :user => @user
-
-			if pass.valid_password?(params[:password])
-				sign_in :pass, pass
-				redirect_to :userpage_index and return
+			if @user.valid_password?(params[:password])
+				sign_in :pass, @user.pass
+				redirect_to :user_path and return
 			else
-				flash[:notice] = "Invalid password"				
-			end
+				flash[:notice] = "Invalid password"	
+			end	
 		else
 			flash[:notice] = "Invalid email or password"
 
 		end
 		@user = User.new :email => params[:email]
 
-		render 'signIn'
+		render 'login'
 	end
 
-	def signUp
+	def sign_up
+		@user = User.new
+	end
+
+	def login
 		if !@user
 			@user = User.new
 		end
-	end
-
-	def signIn
-		if !@user
-			@user = User.new
-		end		
 	end
 
 	def create
 		params = user_params
 
-		@user = User.new 	:username=>params[:username], 
-							:first_name=>params[:first_name], 
-							:last_name=>params[:last_name], 
-							:email=>params[:email]	
+		@user = User.new user_params
 
-		if @user.valid?
-			pass = Pass.new 
-			pass.user = @user
-			pass.email = @user.email
-			pass.password = params[:password]
-			pass.password_confirmation = params[:password_confirmation]			
-
-			if pass.valid?
-				@user.save
-				pass.save				
-				flash[:notice] = "Registration Complete, Please Sign In to continue..."
-				redirect_to :controller => :welcome, :action => :index and return
-			else
-				flash[:alert] = "Error occured #{pass.errors.messages}"
-			end
-
+		if @user.save
+			flash[:notice] = "Registration Complete, Please Sign In to continue..."
+			sign_in :pass, @user.pass
+			redirect_to :userpage_index and return
 		else
 			flash[:alert] = "Error occured #{@user.errors.messages}"
 		end
-		render 'signUp'
+		render 'sign_up'
 	end
 
 	private

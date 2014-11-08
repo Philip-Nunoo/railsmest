@@ -4,6 +4,7 @@
 	<title>Project</title>
 	<%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
 	<%=javascript_include_tag "vendor/modernizr" %>
+	<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,16 +12,18 @@
 	<% if notice or alert %>
 	<div class="">
 		<% if notice %>
-		<div data-alert class="alert-box success">
-			<%= notice %>
-			<a href="#" class="close">&times;</a>
-		</div>
+		<!-- <div data-alert class="alert-box success"> -->
+		<!-- <%= notice %> -->
+		<%= js add_gritter(flash[:notice], :time => 2000 , :title => "Pay attention!") %>
+		<!-- <a href="#" class="close">&times;</a> -->
+		<!-- </div> -->
 		<% end %>
 		<% if alert %>
-		<div data-alert class="alert-box alert">
-			<%= alert %>
-			<a href="#" class="close">&times;</a>
-		</div>
+		<!-- <div data-alert class="alert-box alert"> -->
+		<!-- <%= alert %> -->
+		<%= js add_gritter(flash[:alert], :time => 2000, :title => "Pay attention!") %>
+		<!-- <a href="#" class="close">&times;</a> -->
+		<!-- </div> -->
 		<% end %>
 	</div>
 	<% end %>
@@ -32,8 +35,12 @@
 			</div>
 			<div class="right">
 				<div class="nav">
+					<% if !pass_signed_in? %>
 					<%= link_to :Login, :login %> 
 					<%= link_to "Sign Up", :register %>
+					<% else %>
+					Signed in as: <%= link_to current_pass.user.fullname, :user_path %>
+					<% end %>
 					<%= link_to :About %>
 				</div>
 			</div>
@@ -47,6 +54,5 @@
 		</div>
 		<div>&copy; 2014</div>
 	</footer>
-	<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 </body>
 </html>
